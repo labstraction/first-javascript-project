@@ -60,19 +60,31 @@
 // }
 
 
-// function cloneAndaddOneToArray(array) {
+function cloneAndaddOneToArray(array) {
   
-//   const newArray = [];
+  const newArray = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    const elementPlusOne = element + 1;
+    newArray.push(elementPlusOne);    
+  }
+
+  return newArray;
+}
+
+
+
+// function andaddOneToArray(array) {
 
 //   for (let i = 0; i < array.length; i++) {
 //     const element = array[i];
 //     const elementPlusOne = element + 1;
-//     newArray.push(elementPlusOne);    
+//     array[i] = elementPlusOne;
 //   }
 
-//   return newArray;
+//   return array;
 // }
-
 
 // function findEvenNumbers(array){
 
