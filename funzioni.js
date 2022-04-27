@@ -107,49 +107,100 @@
 
 // console.log(risultato3);
 
-function dividi(dividendo, divisore = 2) {
-  // if (!dividendo) {
-  //   return "mi serve il dividendo"
-  // }
-  // if (!divisore) {
-  //   divisore = 2;
-  // }
-  const quoziente = dividendo / divisore;
-  return quoziente;
-}
+// function dividi(dividendo, divisore = 2) {
+//   // if (!dividendo) {
+//   //   return "mi serve il dividendo"
+//   // }
+//   // if (!divisore) {
+//   //   divisore = 2;
+//   // }
+//   const quoziente = dividendo / divisore;
+//   return quoziente;
+// }
 
-const risultato = dividi(8, 2);
-console.log("due parametri", risultato);
-console.log("----------------");
-const risultato2 = dividi(8);
-console.log("un parametro", risultato2);
-console.log("----------------");
-const risultato3 = dividi();
-console.log("zero parametri", risultato3);
+// const risultato = dividi(8, 2);
+// console.log("due parametri", risultato);
+// console.log("----------------");
+// const risultato2 = dividi(8);
+// console.log("un parametro", risultato2);
+// console.log("----------------");
+// const risultato3 = dividi();
+// console.log("zero parametri", risultato3);
 
 // let numeroInStringa = "52";
 
 // let numero = parseInt(numeroInStringa, 10);
 
-function aggiungiUno(numero) {
+// function aggiungiUno(numero) {
+//   return numero + 1;
+// }
+
+// const aggiungiUnoAnonima = function (numero) {
+//   return numero + 1;
+// };
+
+// const risultato4 = aggiungiUnoAnonima(5);
+
+// console.log("funzione anonima", risultato4);
+
+// const aggiungiUnoLambda = (numero) => numero + 1;
+
+// const risultato5 = aggiungiUnoLambda(8);
+
+// console.log("funzione lambda", risultato5);
+
+// const dividiLambda = (dividendo, divisore) => {
+//   const quoziente = dividendo / divisore;
+//   return quoziente;
+// };
+
+
+function somma(numero1, numero2) {
+  return numero1 + numero2;
+}
+
+function sottrazione(numero1, numero2) {
+  return numero1 - numero2;
+}
+
+function divisione(numero1, numero2) {
+  return numero1 / numero2;
+}
+
+function moltiplicazione(numero1, numero2) {
+  return numero1 * numero2;
+}
+
+
+function eseguiOperazione(numero1, numero2, operazione){
+  return operazione(numero1, numero2);
+}
+
+function resto(numero1, numero2){
+  return numero1 % numero2;
+}
+
+// const restoLambda = (n1, n2) => n1 % n2;
+
+console.log(eseguiOperazione(5, 3, sottrazione));
+
+console.log(eseguiOperazione(9, 4, (pippo, pluto) => pippo % pluto ));
+
+
+
+function somma1(numero) {
   return numero + 1;
 }
 
-const aggiungiUnoAnonima = function (numero) {
-  return numero + 1;
-};
+function somma2(numero) {
+  return numero + 2;
+}
 
-const risultato4 = aggiungiUnoAnonima(5);
 
-console.log("funzione anonima", risultato4);
+function generaSomma(numeroDaSommare) {
+  return (numero) => numero + numeroDaSommare;
+}
 
-const aggiungiUnoLambda = (numero) => numero + 1;
+const sommaTre = generaSomma(3);
 
-const risultato5 = aggiungiUnoLambda(8);
-
-console.log("funzione lambda", risultato5);
-
-const dividiLambda = (dividendo, divisore) => {
-  const quoziente = dividendo / divisore;
-  return quoziente;
-};
+console.log(sommaTre(5));
