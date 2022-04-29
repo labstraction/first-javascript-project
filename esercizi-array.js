@@ -228,6 +228,7 @@
 
 const testArray4 = [2, 4, 7, -9, 1000, -45, 2, 12, 333, -1000, 123, 34];
 
+
 // const testArray5 = ["rosso", "verde", "giallo", "arancione", "magenta", "blu"];
 
 // const testArray6 = [true, "pippo", 204, "verde", 3000, 100, false];

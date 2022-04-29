@@ -265,71 +265,111 @@
 
 /// mapping
 
-const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12];
+// const testArray = [2, 6, 8, 7, 21, 2001, 5000, 3, 12];
 
-function addOneToAllElements(array) {
+// function addOneToAllElements(array) {
   
-  const newArray = [];
+//   const newArray = [];
 
-  for (let i = 0; i < array.length; i++) {
+//   for (let i = 0; i < array.length; i++) {
 
-    const element = array[i];
+//     const element = array[i];
     
-    const newElement = element + 1
+//     const newElement = element + 1
 
-    newArray.push(newElement);
+//     newArray.push(newElement);
 
+//   }
+
+//   return newArray;
+// }
+
+// function divideAllElements(array) {
+//   const newArray = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     const element = array[i];
+
+//     const newElement = element / 2;
+
+//     newArray.push(newElement);
+//   }
+
+//   return newArray;
+// }
+
+// function map(array, mappingFunction) {
+//     const newArray = [];
+
+//     for (let i = 0; i < array.length; i++) {
+//       const element = array[i];
+
+//       const newElement = mappingFunction(element);
+
+//       newArray.push(newElement);
+//     }
+
+//     return newArray;
+// }
+
+
+// console.log('add One', addOneToAllElements(testArray))
+// console.log("divide", divideAllElements(testArray));
+
+
+// function addOne(element) {
+//   return element + 1;
+// }
+
+// function divide(element) {
+//   return element / 2;
+// }
+
+// console.log('my map add one', map(testArray, addOne));
+// console.log("my map divide", map(testArray, divide));
+// console.log("my map square", map(testArray, (element) => element * element))
+
+
+// console.log("javascript map add one", testArray.map(addOne));
+// console.log("javascript map divide", testArray.map(divide));
+// console.log("javascript map square", testArray.map((element) => element * element))
+
+function compareNumbers(el1, el2){
+  if (el1 > el2) {
+    return 1;
+  } else if (el1 < el2) {
+    return -1
+  } else {
+    return 0
   }
-
-  return newArray;
 }
 
-function divideAllElements(array) {
-  const newArray = [];
-
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-
-    const newElement = element / 2;
-
-    newArray.push(newElement);
-  }
-
-  return newArray;
-}
-
-function map(array, mappingFunction) {
-    const newArray = [];
-
-    for (let i = 0; i < array.length; i++) {
-      const element = array[i];
-
-      const newElement = mappingFunction(element);
-
-      newArray.push(newElement);
-    }
-
-    return newArray;
+function compareNumber2(el1, el2) {
+  return el1 - el2
 }
 
 
-console.log('add One', addOneToAllElements(testArray))
-console.log("divide", divideAllElements(testArray));
-
-
-function addOne(element) {
-  return element + 1;
+function compareString(el1, el2) {
+  return el1.localeCompare(el2) * -1;
 }
 
-function divide(element) {
-  return element / 2;
+function compareStringByLength(el1, el2){
+  return el1.length - el2.length;
 }
 
-console.log('my map add one', map(testArray, addOne));
-console.log("my map divide", map(testArray, divide));
-console.log("my map square", map(testArray, (element) => element * element))
+const arrayOfNumbers = [1, 5, 3, 8, 6];
+
+arrayOfNumbers.sort(compareNumbers);
 
 
-console.log("javascript map add one", testArray.map(addOne));
-console.log("javascript map divide", testArray.map(divide));
-console.log("javascript map square", testArray.map((element) => element * element))
+const arrayOfStrings = ['balcone', 'aritmetica', 'giallo', 'zuzzerellone'];
+
+arrayOfStrings.sort(compareStringByLength);
+
+console.log(arrayOfStrings);
+
+const testArray4 = [2, 4, 7, -9, 1000, -45, 2, 12, 333, -1000, 123, 34];
+
+testArray4.sort(compareNumber2);
+
+console.log(testArray4)
